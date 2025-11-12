@@ -20,7 +20,7 @@ plt.rcParams['axes.unicode_minus'] = False  # 正确显示负号
 
 # ---------------------- 数据读取与基础查看 ----------------------
 # 读取训练集数据（二手车交易数据）
-data = pd.read_csv('used_car_train_20200313.csv', sep=' ')
+data = pd.read_csv('assets/sample_data/used_car_train_20200313.csv', sep=' ')
 
 # 完善数据查看部分
 print("===== 训练集前5行数据 =====")
@@ -39,8 +39,8 @@ print("\n===== 训练集缺失值统计 =====")
 print(data.isnull().sum())  # 统计每列缺失值数量
 
 # 读取测试集数据
-test_A = pd.read_csv('used_car_testA_20200313.csv', sep=' ')
-test_B = pd.read_csv('used_car_testB_20200421.csv', sep=' ')
+test_A = pd.read_csv('assets/sample_data/used_car_testA_20200313.csv', sep=' ')
+test_B = pd.read_csv('assets/sample_data/used_car_testB_20200421.csv', sep=' ')
 
 # 合并两个测试集（按行合并）
 test_set = pd.concat([test_A, test_B], axis=0)
@@ -48,7 +48,7 @@ print("\n===== 合并后的测试集缺失值统计 =====")
 print(test_set.isnull().sum())  # 查看测试集缺失情况
 
 # 读取提交模板（用于存放预测结果）
-submit = pd.read_csv('used_car_sample_submit.csv', sep=',')
+submit = pd.read_csv('assets/sample_data/used_car_sample_submit.csv', sep=',')
 print("\n===== 提交模板前5行 =====")
 print(submit.head())
 
